@@ -1,0 +1,53 @@
+import pygame as pg
+from os import path
+import shelve
+
+pg.mixer.init()
+
+TITLE = "Bunny!"
+WIDTH, HEIGHT = 480, 600
+FPS = 60
+SPRITESHEET_NAME = "spritesheet_jumper.png"
+
+
+# COLORS
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+RED = (255, 0, 0)
+GREEN = (0, 255, 0)
+BLUE = (0, 0, 255)
+YELLOW = (255, 255, 0)
+LIGHT_BLUE = (50, 155, 200)
+
+FONT_NAME = "Arial"
+
+# Game Vars
+JUMP_HEIGHT = -18
+POW_JUMP_HEIGHT = -70
+PLAYER_ACC = 0.6
+FRICTION = -0.12
+GRAVITY = 0.5
+ON_SCREEN_PLATFORMS_COUNT = 5
+CLOUDS_COUNT = 12
+POWERUP_PCT = 0.9
+POWERUP_PCT_LIFE = 0.99
+MOB_SPAWN_PCT = 0.9
+EXTRAS_SPAWN_PCT = 0.4
+COLLECTABLES_SPAWN_PCT = 0.8
+SHOOTING_PCT = 0.995
+
+# Layers
+PLAYER_LAYER = 4
+MOB_LAYER = 4
+MOB_BULLET_LAYER = 3
+POW_LAYER = 3
+PLATFORM_LAYER = 1
+EXTRAS_LAYER = 1
+COLLECTABLES_LAYER = 2
+
+initial_platforms = [
+	(0, HEIGHT - 50),
+	(WIDTH / 2 - 180 * 0.5, HEIGHT - 150),
+	(WIDTH / 2 - 220, HEIGHT - 300),
+	(WIDTH / 2 - 100, HEIGHT - 400),
+]
